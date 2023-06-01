@@ -68,4 +68,12 @@ public class BatchConfiguration {
 		return new StepBuilder("step1", jobRepository).<Transaction, Transaction>chunk(10, transactionManager)
 				.reader(reader()).processor(processor()).writer(writer).build();
 	}
+	
+	/*
+	 * @Bean public Step step2(JobRepository jobRepository) { StepBuilder builer=new
+	 * StepBuilder("step2", jobRepository).tasklet(null) return new
+	 * StepBuilder("step1", jobRepository).<Transaction, Transaction>chunk(10,
+	 * transactionManager)
+	 * .reader(reader()).processor(processor()).writer(writer).build(); }
+	 */
 }
