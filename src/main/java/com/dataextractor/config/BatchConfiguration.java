@@ -33,6 +33,7 @@ public class BatchConfiguration {
 		FlatFileItemReader<Transaction> itemReader = new FlatFileItemReader<>();
 		DefaultLineMapper<Transaction> lineMapper = new DefaultLineMapper<Transaction>();
 		DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer("@");
+		itemReader.setLinesToSkip(1);
 		lineMapper.setLineTokenizer(lineTokenizer);
 		lineMapper.setFieldSetMapper(new TranasctionDataMapper());
 		itemReader.setLineMapper(lineMapper);
