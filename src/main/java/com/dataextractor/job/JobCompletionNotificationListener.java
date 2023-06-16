@@ -33,5 +33,7 @@ public class JobCompletionNotificationListener implements JobExecutionListener {
 							(rs, row) -> new Transaction(rs.getInt(1), rs.getString(2), rs.getString(3)))
 					.forEach(person -> log.info("Found <{{}}> in the database.", person));
 		}
+		
+		//Need to write code for deleting the input file
 	}
 }
