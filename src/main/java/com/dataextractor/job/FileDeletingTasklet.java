@@ -29,11 +29,9 @@ public class FileDeletingTasklet implements Tasklet {
   @Override
   public RepeatStatus execute(StepContribution stepContribution,
       ChunkContext chunkContext) {
-    try (Stream<Path> walk =
-        Files.walk(Paths.get(directory.getFile().getPath()))) {
-      walk.filter(Files::isRegularFile).map(Path::toFile)
-          .forEach(File::delete);
-    } catch (IOException e) {
+    try {
+    	//Need to write file deletion logic
+    } catch (Exception e) {
       LOGGER.error("error deleting files", e);
       throw new UnexpectedJobExecutionException(
           "unable to delete files");
